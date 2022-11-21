@@ -11,24 +11,21 @@ let answersArr = [
 	'Nie chcesz znać odpowiedzi na to pytanie... :/',
 ];
 const shakeBall = () => {
-    ball.classList.add('shake-animation')
-   setTimeout(checInput,1000)
-}
+	ball.classList.add('shake-animation');
+	setTimeout(checInput, 1000);
+};
 const checInput = () => {
 	if (input.value !== '' && input.value.slice(-1) === '?') {
 		generateAnswer();
 		pError.textContent = '';
-        ball.classList.remove('shake-animation')
 	} else if (input.value !== '' && input.value.slice(-1) !== '?') {
-        pError.textContent = 'Pytanie musi być zakończone znakiem "?".';
+		pError.textContent = 'Pytanie musi być zakończone znakiem "?".';
 		pAnswer.textContent = '';
-        ball.classList.remove('shake-animation')
-	}else{
-        pError.textContent = 'Musisz zadać jakieś pytanie!';
+	} else {
+		pError.textContent = 'Musisz zadać jakieś pytanie!';
 		pAnswer.textContent = '';
-        ball.classList.remove('shake-animation')
-
-    }
+	}
+	ball.classList.remove('shake-animation');
 };
 
 const generateAnswer = () => {
